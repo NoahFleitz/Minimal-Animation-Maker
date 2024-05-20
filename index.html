@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Animation Maker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <div class="toolbar">
+        <button id="addFrameButton"><i class="fas fa-plus"></i></button>
+        <button id="prevFrameButton"><i class="fas fa-backward"></i></button>
+        <button id="playButton"><i class="fas fa-play"></i></button>
+        <button id="nextFrameButton"><i class="fas fa-forward"></i></button>
+        <button id="deleteFrameButton"><i class="fas fa-trash"></i></button>
+    </div>
+    <div class="sliders">
+        <label for="speedSlider">FPS</label>
+        <input type="range" id="speedSlider" min="33" max="1000" value="33" step="1" />
+        <div class="dropdown">
+            <label for="pencilSlider" class="tilt"><i id="penIcon" class="fas fa-pen tilt"></i></label>
+            <div class="dropdown-content" id="penColorDropdown">
+                <div class="color-option" data-color="black" style="background-color: black;"></div>
+                <div class="color-option" data-color="red" style="background-color: red;"></div>
+                <div class="color-option" data-color="orange" style="background-color: orange;"></div>
+                <div class="color-option" data-color="yellow" style="background-color: yellow;"></div>
+                <div class="color-option" data-color="green" style="background-color: green;"></div>
+                <div class="color-option" data-color="blue" style="background-color: blue;"></div>
+            </div>
+        </div>
+        <input type="range" id="pencilSlider" min="1" max="20" value="10" step="1" />
+        <label for="eraserSlider" id="clearButton" class="tilt"><i class="fas fa-eraser"></i></label>
+        <input type="range" id="eraserSlider" min="1" max="60" value="20" step="2" />
+    </div>
+    <main id="container">
+        <div id="canvasBg"></div>
+
+        <div id="buttonContainer">
+            <button id="saveButton"><i class="fas fa-save tilt"></i></button>
+            <button id="loadButton"><i class="fas fa-folder-open tilt"></i></button>
+        </div>
+    </main>
+    <div id="carousel"></div>
+
+    <!-- Load Modal -->
+    <div id="loadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="saveList" class="save-list"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/controls.js"></script>
+</body>
+</html>
